@@ -1,6 +1,6 @@
 {
   "name": "todo-terminal",
-  "version": "2.0.0",
+  "version": "0.0.4",
   "description": "> TODO: description",
   "author": "zlx <zlx2018@aliyun.com>",
   "license": "ISC",
@@ -11,7 +11,8 @@
     "bin"
   ],
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/zlx362211854/todo-terminal"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
