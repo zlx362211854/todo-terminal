@@ -1,0 +1,24 @@
+{
+  "name": "todo-terminal",
+  "version": "2.0.0",
+  "description": "> TODO: description",
+  "author": "zlx <zlx2018@aliyun.com>",
+  "license": "ISC",
+  "directories": {
+    "test": "__tests__"
+  },
+  "files": [
+    "bin"
+  ],
+  "repository": {
+    "type": "git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "rm -rf ./bin/main && cd src && go build ./src/main.go && cp ./main ../bin/main",
+    "build-win": "rm -rf ./bin/main.exe && cd src && env GOOS=windows GOARCH=386 go build -o main.exe ./src/main.go && cp ./main.exe ../bin/main.exe"
+  },
+  "bin": {
+    "todo": "./bin/index.js"
+  }
+}
