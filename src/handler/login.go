@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"os"
 	"terminal/request"
 	"terminal/service/ctx"
 	"terminal/validate"
@@ -51,6 +52,6 @@ func HandleLogin(ctx *ctx.Ctx) {
 	}
 	if resp.Response.Code == 100 {
 		color.Red(resp.Response.Message)
-		panic("End")
+		os.Exit(3)
 	}
 }

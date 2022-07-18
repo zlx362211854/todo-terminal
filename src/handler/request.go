@@ -45,7 +45,8 @@ func HandleDelete(ctx *ctx.Ctx, index int) {
 	data := ctx.Data.GetData()
 	l := len(data)
 	if index >= l || index < 0 {
-		panic("index does not exist!")
+		color.Yellow("index does not exist!")
+		os.Exit(3)
 	}
 	current := data[index]
 	print(current.Id)
@@ -57,7 +58,8 @@ func HandleModify(ctx *ctx.Ctx, index int, title, description, status string) bo
 	data := ctx.Data.GetData()
 	l := len(data)
 	if index >= l || index < 0 {
-		panic("index does not exist!")
+		color.Yellow("index does not exist!")
+		os.Exit(3)
 	}
 	resp := request.Update(ctx, data[index].Id, title, description, status)
 	if resp.Response.Code == 200 {
@@ -75,7 +77,8 @@ func HandleDone(ctx *ctx.Ctx, index int) bool {
 	data := ctx.Data.GetData()
 	l := len(data)
 	if index >= l || index < 0 {
-		panic("index does not exist!")
+		color.Yellow("index does not exist!")
+		os.Exit(3)
 	}
 	current := data[index]
 	id := current.Id

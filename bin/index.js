@@ -12,9 +12,13 @@ var argsWithQuotes = args.map(function (a) {
 })
 
 var argStr = ' ' + argsWithQuotes.join(' ')
-if (os.type() == 'Windows_NT') {
-    //windows
-    child_process.execSync(path.resolve(__dirname + '/main.exe') + argStr, { stdio: 'inherit' })
-} else {
-    child_process.execSync(path.resolve(__dirname + '/main') + argStr, { stdio: 'inherit' })
+try {
+    if (os.type() == 'Windows_NT') {
+        //windows
+        child_process.execSync(path.resolve(__dirname + '/main.exe') + argStr, { stdio: 'inherit' })
+    } else {
+        child_process.execSync(path.resolve(__dirname + '/main') + argStr, { stdio: 'inherit' })
+    }
+} catch (err) {
+    console.error("An error occurred. Please try again")
 }
