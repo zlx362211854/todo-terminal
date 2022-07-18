@@ -4,11 +4,7 @@ const os = require('os');
 var path = require('path')
 
 var args = process.argv.slice(2);
-var argStr = ' '
-args.forEach(i => {
-    argStr += `${i} `
-})
-
+var argStr = ' ' + args.join(' ')
 if (os.type() == 'Windows_NT') {
     //windows
     child_process.execSync(path.resolve(__dirname + '/main.exe') + argStr, { stdio: 'inherit' })
